@@ -47,6 +47,16 @@ function playRound(playerSelection, computerSelection){
     }
 }//this code plays a round of the game and returns the values
 
+function score(win, lose){
+    if (win > lose){
+        return "You won!!";
+    } else if (lose > win){
+        return "You lost!"
+    } else {
+        return "Draw";
+    }
+}
+
 function game(){
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Pick Rock, Paper or Scissors:", "");
@@ -54,6 +64,7 @@ function game(){
         let computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
     }//this loop first asks for a prompt by the user, then makes it case insensitive with the toLowerCase() method. Then plays the round for five times
+    console.log(score(win, lose));
 }
 
 game();
